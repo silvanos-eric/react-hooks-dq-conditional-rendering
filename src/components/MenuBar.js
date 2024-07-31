@@ -1,6 +1,6 @@
 import React from "react";
 
-function MenuBar(props) {
+function MenuBar({ viewName, setViewName }) {
   /*
 
   The 'span' tags below are the menu items. Think about the way a menu 
@@ -14,19 +14,31 @@ function MenuBar(props) {
 
   return (
     <div className="ui four item menu">
-      <span className="item active">
+      <span
+        className={`item ${viewName === "profile" ? "active" : ""}`}
+        onClick={() => setViewName("profile")}
+      >
         <i className="user large icon" />
       </span>
 
-      <span className="item">
+      <span
+        className={`item ${viewName === "photos" ? "active" : ""}`}
+        onClick={() => setViewName("photos")}
+      >
         <i className="photo large icon" />
       </span>
 
-      <span className="item">
+      <span
+        className={`item ${viewName === "cocktails" ? "active" : ""}`}
+        onClick={() => setViewName("cocktails")}
+      >
         <i className="cocktail large icon" />
       </span>
 
-      <span className="item">
+      <span
+        className={`item ${viewName === "pokemon" ? "active" : ""} `}
+        onClick={() => setViewName("pokemon")}
+      >
         <i className=" themeisle large icon" />
       </span>
     </div>
